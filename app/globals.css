@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@flaticon/flaticon-uicons/css/all/all";
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hero Section */
+.imgDiv_hero img {
+  height: 400px;
+  width: auto;
+}
+
+/* General */
+.bgImg_topLeft {
+  background-image: url("../app/assets/Bg_top_left.png");
+  background-size: auto 380px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.bgImg_bottomRight {
+  background-image: url("../app/assets/Bg_bottom_right.png");
+  background-size: auto 400px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+.bgImg_centerRight,
+.bgImg_ServiceForm {
+  background-image: url("../app/assets/Bg_center_right.png");
+  background-size: auto 600px;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+/* CARD FLIP */
+.flip-card {
+  perspective: 1000px;
+  position: relative;
+  min-height: 220px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Text Input */
+.txt_inp_width_ServiceForm {
+  border-color: rgb(209 213 219);
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+.txt_inp_width_ServiceForm,
+.txt_inp_width_ServiceForm::placeholder {
+  font-family: var(--font-source-sans-pro), sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.txt_inp_width_ServiceForm::placeholder {
+  color: #808080;
+}
+
+/* Dropdowns */
+.txt_inp_width_ServiceForm,
+.select_netnxt.dropD_main_netnxt {
+  width: 400px;
+}
+.dropD_netnxt.dropD__control:hover,
+.dropD_netnxt.dropD__control {
+  width: 100%;
+  border-color: rgb(209 213 219);
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+.dropD_netnxt.dropD__control:focus {
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+.dropD_netnxt.dropD__control--is-focused,
+.dropD_netnxt.dropD__control--menu-is-open {
+  color: #000;
+}
+
+.dropD_netnxt.dropD__single-value {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.dropD_netnxt.dropD__placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  color: #808080;
+}
+
+.dropD_netnxt.dropD__option {
+  font-size: 18px;
+  white-space: normal;
+}
+.dropD_netnxt.dropD__option--is-focused,
+.dropD_netnxt.dropD__option--is-selected {
+  font-size: 18px;
+  white-space: normal;
+  color: #000;
+  background-color: #f2f2f2;
+}
+.dropD_netnxt.dropD__indicator-separator {
+  width: 0;
+}
+.dropD_netnxt.dropD__multi-value__remove svg {
+  fill: #000;
+}
+
+/********************************************/
+/* MEDIA QUERIES */
+/********************************************/
+
+/********************************************/
+/* Maximum Widths */
+/********************************************/
+
+/********************************************/
+/* BELOW 1550px / 155rem (10px) [Bigger Desktops] */
+/********************************************/
+
+@media (min-width: 1550px) {
+  .bgImg_topLeft {
+    background-size: auto 780px;
+  }
+  .bgImg_centerRight,
+  .bgImg_ServiceForm {
+    background-size: auto 900px;
+  }
+
+  /* Dropdown */
+  .txt_inp_width_ServiceForm,
+  .select_netnxt.dropD_main_netnxt {
+    width: 500px;
+  }
+  .txt_inp_width_ServiceForm,
+  .txt_inp_width_ServiceForm::placeholder {
+    font-size: 28px;
+  }
+
+  .dropD_netnxt.dropD__value-container {
+    padding: 10px 18px;
+  }
+  .dropD_netnxt.dropD__single-value {
+    font-size: 28px;
+  }
+
+  .dropD_netnxt.dropD__option {
+    font-size: 28px;
+  }
+  .dropD_netnxt.dropD__placeholder,
+  .dropD_netnxt.dropD__option,
+  .dropD_netnxt.dropD__option--is-focused,
+  .dropD_netnxt.dropD__option--is-selected {
+    font-size: 28px;
+  }
+  .dropD_netnxt.dropD__multi-value__label {
+    font-size: 26px;
+  }
+
+  .dropD_netnxt.dropD__indicator.dropD__dropdown-indicator svg {
+    width: 30px;
+    height: 30px;
+  }
+  .dropD_netnxt.dropD__multi-value__remove svg {
+    width: 24px;
+    height: 24px;
+  }
+  .dropD_netnxt.dropD__indicator.dropD__clear-indicator svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 1550px) {
+}
+
+/********************************************/
+/* BELOW 1280px / 128rem (10px) [Smaller Desktops] */
+/********************************************/
+
+@media (max-width: 1280px) {
+  .txt_inp_width_ServiceForm,
+  .select_netnxt.dropD_main_netnxt {
+    width: 300px;
+  }
+}
+
+/********************************************/
+/* BELOW 1080px / 108rem (10px) [Landscape Tablets] */
+/********************************************/
+
+@media (max-width: 1080px) {
+}
+
+/********************************************/
+/* BELOW 850px / 85rem (10px) [Portrait Tablets] */
+/********************************************/
+
+@media (max-width: 850px) {
+  /* Text Input */
+  .txt_inp_width_ServiceForm,
+  .txt_inp_width_ServiceForm::placeholder {
+    font-size: 16px;
+  }
+
+  /* Dropdown */
+  .txt_inp_width_ServiceForm,
+  .select_netnxt.dropD_main_netnxt {
+    width: 550px;
+  }
+
+  .dropD_netnxt.dropD__single-value {
+    font-size: 16px;
+  }
+
+  .dropD_netnxt.dropD__option {
+    font-size: 17px;
+  }
+  .dropD_netnxt.dropD__placeholder,
+  .dropD_netnxt.dropD__option,
+  .dropD_netnxt.dropD__option--is-focused,
+  .dropD_netnxt.dropD__option--is-selected {
+    font-size: 17px;
+  }
+}
+
+/********************************************/
+/* BELOW 650px / 65rem (10px) [Landscape Phones] */
+/********************************************/
+
+@media (max-width: 650px) {
+  /* General */
+  .bgImg_topLeft {
+    background-size: auto 280px;
+    background-position: top left;
+  }
+
+  .bgImg_bottomRight {
+    background-image: none;
+  }
+
+  .bgImg_centerRight,
+  .bgImg_ServiceForm {
+    background-image: none;
+  }
+
+  /* Text Input */
+  .txt_inp_width_ServiceForm,
+  .txt_inp_width_ServiceForm::placeholder {
+    font-size: 15px;
+  }
+
+  /* Dropdown */
+  .txt_inp_width_ServiceForm,
+  .select_netnxt.dropD_main_netnxt {
+    width: 400px;
+  }
+
+  .dropD_netnxt.dropD__single-value {
+    font-size: 15px;
+  }
+}
+
+/********************************************/
+/* BELOW 480px / 48rem (10px) [Portrait Phones] */
+/********************************************/
+
+@media (max-width: 480px) {
+  /* Dropdown */
+  .txt_inp_width_ServiceForm,
+  .select_netnxt.dropD_main_netnxt {
+    width: 100%;
+  }
+
+  .dropD_netnxt.dropD__option {
+    font-size: 16px;
+  }
+  .dropD_netnxt.dropD__placeholder,
+  .dropD_netnxt.dropD__option,
+  .dropD_netnxt.dropD__option--is-focused,
+  .dropD_netnxt.dropD__option--is-selected {
+    font-size: 16px;
+  }
+}
+
+/********************************************/
+/* BELOW 380px / 38rem (10px) [Small Portrait Phones] */
+/********************************************/
+
+@media (max-width: 380px) {
+}
